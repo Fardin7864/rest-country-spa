@@ -11,8 +11,6 @@ import AllCountrys from './components/AllCountrys/AllCountrys.jsx'
 import Asia from './components/Asia/Asia.jsx'
 import Europ from './components/Europ/Europ.jsx'
 import Africa from './components/Africa/Africa.jsx'
-import Ocenia from './components/Ocenia/Ocenia.jsx'
-
  const router = createBrowserRouter([
   {
     path: '/',
@@ -37,12 +35,7 @@ import Ocenia from './components/Ocenia/Ocenia.jsx'
         path: '/africa',
         loader: () => fetch(`https://restcountries.com/v3.1/region/africa`),
         element: <Africa></Africa>
-      },
-      {
-        path: '/ocenia',
-        loader: () => fetch(`https://restcountries.com/v3.1/region/ocenia`),
-        element: <Ocenia></Ocenia>
-      },
+      }
      
     ]
   },

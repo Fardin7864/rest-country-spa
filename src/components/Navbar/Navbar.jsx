@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import './Navbar.css'
 
 const Navbar = () => {
+  
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
@@ -20,14 +22,27 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Rest Country</a>
+    <NavLink to="/asia" className="btn btn-ghost normal-case text-xl">Rest Country</NavLink>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><NavLink to="/all">All</NavLink></li>
-      <li><NavLink to="/asia">Asia</NavLink></li>
-      <li><NavLink to="/europ">Europ</NavLink></li>
-      <li><NavLink to="/africa">Africa</NavLink></li>
+      <li className="mr-4"><NavLink to="/all" 
+      className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-lime-500 rounded-lg underline text-white" : ""
+    }>All</NavLink></li>
+      <li className="mr-4" ><NavLink to="/asia"
+      className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-lime-500 rounded-lg underline text-white" : ""
+    }
+    >Asia</NavLink></li>
+      <li className="mr-4"><NavLink to="/europ"
+       className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-lime-500 rounded-lg underline text-white" : ""
+    }>Europ</NavLink></li>
+      <li className="mr-4"><NavLink to="/africa"
+      className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-lime-500 rounded-lg underline text-white" : ""
+    }>Africa</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end">
