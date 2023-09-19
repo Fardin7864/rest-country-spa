@@ -8,7 +8,10 @@ import
   RouterProvider,
  } from 'react-router-dom'
 import AllCountrys from './components/AllCountrys/AllCountrys.jsx'
-import Users from './components/Users/Users.jsx'
+import Asia from './components/Asia/Asia.jsx'
+import Europ from './components/Europ/Europ.jsx'
+import Africa from './components/Africa/Africa.jsx'
+import Ocenia from './components/Ocenia/Ocenia.jsx'
 
  const router = createBrowserRouter([
   {
@@ -19,6 +22,26 @@ import Users from './components/Users/Users.jsx'
         path: '/all',
         loader: () => fetch('https://restcountries.com/v3.1/all'),
         element: <AllCountrys></AllCountrys>
+      },
+      {
+        path: '/asia',
+        loader: () => fetch(`https://restcountries.com/v3.1/region/asia`),
+        element: <Asia></Asia>
+      },
+      {
+        path: '/europ',
+        loader: () => fetch(`https://restcountries.com/v3.1/region/europ`),
+        element: <Europ></Europ>
+      },
+      {
+        path: '/africa',
+        loader: () => fetch(`https://restcountries.com/v3.1/region/africa`),
+        element: <Africa></Africa>
+      },
+      {
+        path: '/ocenia',
+        loader: () => fetch(`https://restcountries.com/v3.1/region/ocenia`),
+        element: <Ocenia></Ocenia>
       },
      
     ]
