@@ -1,6 +1,7 @@
 import { Outlet, useNavigation } from "react-router-dom"
 import Home from "./components/Home/Home"
-
+import { createContext } from "react";
+export  const AsserContext = createContext('Gold');
 function App() {
   const navigation = useNavigation();
 
@@ -13,7 +14,9 @@ function App() {
           <span className="loading loading-spinner loading-lg"></span>
         </div> 
         : 
-        <Outlet></Outlet>
+        <AsserContext.Provider value="Asia">
+          <Outlet></Outlet>
+        </AsserContext.Provider>
       }
 
     </>
